@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="shortcut icon" href="/images/favicon.png" />
+  <title>ActionView - 更好用的问题需求跟踪工具</title>
+
+  <style type="text/css"> 
+body {                  
+  margin: 0px;
+  padding: 0px;
+  font-family: Helvetica Neue,Helvetica,Arial,Hiragino Sans GB,Hiragino Sans GB W3,Microsoft YaHei,sans-serif;
+}
+#navbar-actionview {
+    padding-top: 0;
+    transition: background .5s;
+    height: 65px;
+    margin-bottom: 0;
+    box-sizing: border-box;
+}
+
+.nav {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.navbar-header {
+    float: left;
+    margin-top: 18px;
+    margin-left: 50px;
+}
+
+.navbar-nav {
+    float: left;
+    margin: 0;
+}
+
+.navbar-right {
+    float: right!important;
+    margin-right: -15px;
+}
+
+#navbar-actionview .navbar-nav {
+    margin-top: 0;
+    margin-right: 0;
+}
+
+.navbar-nav>li {
+    float: left;
+}
+
+.nav>li, .nav>li>a {
+    position: relative;
+    display: block;
+}
+
+ul {
+    display: block;
+    padding: 0px;
+}
+
+li {
+    display: list-item;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#navbar-actionview .navbar-nav li a {
+    padding: 10px 15px;
+    line-height: 20px;
+    margin-right: 15px;
+    color: #434343;
+    font-size: 15px;
+    text-shadow: none;
+    padding-top: 23px;
+    padding-bottom: 23px;
+}
+
+a {
+    text-decoration: none;
+}
+
+#navbar-actionview .navbar-nav li a:hover {
+    color: #018b61;
+}
+
+.tour-wrap {
+    min-height: 500px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.common-banner {
+    background: url(./images/bg.png) top no-repeat;
+    background-size: cover;
+}
+
+.common-banner .common-title {
+    padding: 200px 5px 5px;
+    font-size: 40px;
+    color: #3b3b3b;
+}
+
+.common-banner .common-action {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.index-banner-action-btn {
+    display: inline-block;
+    padding: 14px 70px;
+    background: #5cb85c;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.common-banner .common-nav {
+    margin-top: 160px;
+}
+
+.index-banner-action-btn:hover {
+    background: #018b61;
+}
+
+#navbar-actionview .btn-try {
+    display: inline-block;
+    border: 1px solid #02a473;
+    background: #5cb85c;
+    color: #fff!important;
+    padding: 5px 24px!important;
+    border-radius: 3px;
+    font-size: 14px!important;
+    margin-top: 17px;
+    margin-left: 20px;
+    outline: none;
+}
+
+#navbar-actionview .btn-try:hover {
+    background: #018b61;
+}
+
+.common-banner .common-desc {
+    font-size: 16px;
+    color: #4b4b4b;
+    padding: 20px 10px;
+    line-height: 26px;
+}
+
+.common-banner .common-desc, .common-banner .common-title {
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.container {
+  max-width: 1050px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  text-align: center;
+  font-size: 30px;
+  margin: 10px 0 20px;
+}
+
+.section-view {
+    float: left;
+    padding: 70px 0;
+    margin: 0 auto;
+    max-width: 1050px;
+    line-height: 2;
+    border-bottom: 1px dashed #ededed;
+}
+
+.section-view .title {
+    margin-top: 30px;
+    padding-bottom: 5px;
+    font-size: 30px;
+}
+
+.section-view .desc {
+    margin-right: -10px;
+    text-align: left;
+}
+
+.col-md-4 {
+    width: 30%;
+}
+
+.col-md-8 {
+    width: 60%;
+}
+
+.left {
+    float: left
+}
+
+.text-right {
+    text-align: right 
+}
+
+.col-md-4,.col-md-8{
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.show-img {
+    width: 625px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+h2 {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: 'Microsoft YaHei';
+  font-weight: normal;
+}
+
+</style>
+</head>
+<body>
+  <nav id='navbar-actionview'>
+    <div class='navbar-header'>
+      <img src='/images/brand.png' width=160/>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="/">首页</a>
+      </li>
+      <li>
+        <a href="/docs/" target='_blank'>文档</a>
+      </li>
+      <li>
+        <a href="https://github.com/lxerxa/actionview#roadmap" target='_blank'>路线图</a>
+      </li>
+      <li>
+        <a href="https://github.com/lxerxa/actionview" target='_blank'>GitHub</a>
+      </li>
+      <li>
+        <a href="/support" class="btn btn-try">试 用</a>
+      </li>
+    </ul>
+  </nav>
+  <div class='tour-wrap'>
+    <div class='common-banner'>
+      <div class='common-title'>
+        更好用的问题跟踪工具
+      </div>
+      <div class='common-desc'>
+        ActionView 是一个面向企业的、开源免费的、简单易用的、类Jira的问题需求跟踪工具 
+      </div>
+      <div class='common-action'>
+        <a href='#' class='index-banner-action-btn'>试 用</a>
+      </div>
+      <div class='common-nav'>
+        &nbsp;
+      </div>
+    </div>
+    <div class='main'>
+      <div class='container'>
+        <div class='row'>
+          产品特性
+        </div>
+        <div class='section-view'>
+          <div class='col-md-4 left'>
+            <div class='title'>
+              用户创建项目
+            </div>
+            <div class='desc'>
+              支持用户创建项目，项目不仅可引用全局配置方案，也可自定义本地方案。各项目间自定义方案是隔离的。
+            </div>
+          </div>
+          <div class='col-md-8 left text-right'>
+            <img class='show-img' src='/images/project.png'/>
+          </div>
+        </div>
+        <div class='section-view'>
+          <div class='col-md-8 left text-right'>
+            <img class='show-img' src='/images/workflow.png'/>
+          </div>
+          <div class='col-md-4 left'>
+            <div class='title'>
+              定制专属工作流
+            </div>
+            <div class='desc'>
+              每个团队交付软件都有自己的过程。您可以引用全局默认工作流，也可以创建一个适用你团队的工作流。同时工作流的每一步可进行精细控制，确保正确的人在正确的时间执行正确的操作。
+            </div>
+          </div>
+        </div>
+        <div class='section-view'>
+          <div class='col-md-4 left'>
+            <div class='title'>
+              自定义问题界面
+            </div>
+            <div class='desc'>
+              简单易用的问题界面配置，同时自定义界面也可应用至工作流当中。
+            </div>
+          </div>
+          <div class='col-md-8 left text-right'>
+            <img class='show-img' src='/images/issue.png'/>
+          </div>
+        </div>
+        <div class='section-view'>
+          <div class='col-md-8 left text-right'>
+            <img class='show-img' src='/images/others.png'/>
+          </div>
+          <div class='col-md-4 left'>
+            <div class='title'>
+              其他功能
+            </div>
+            <div class='desc'>
+              强大的问题筛选功能，可定义自己的过滤器；支持用户在问题上添加工作日志；支持用户针对问题发表评论；不仅可查看某个问题的改动记录，还可浏览整个项目的活动日志。
+            </div>
+          </div>
+        </div>
+        <div class='section-view'>
+          <div class='col-md-4 left'>
+            <div class='title'>
+              前沿技术栈
+            </div>
+            <div class='desc'>
+              采用较流行的前后端技术栈，React+Redux/PHP Laravel/MongoDB。
+            </div>
+          </div>
+          <div class='col-md-8 left text-right'>
+            <img class='show-img' src='/images/react-laravel.png'/>
+          </div>
+        </div>
+        <div class='section-view'>
+          <h2>我们承诺：该系统后续无论增加什么功能，只要是我们发布的都会永久免费。</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
