@@ -4,6 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="shortcut icon" href="/images/favicon.png" />
   <link rel="stylesheet" href="/css/bootstrap.min.css">
   <style type="text/css">
 body {
@@ -71,34 +72,58 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+
   </style>
 </head>
 <body>
   <div class='doc'>
     <div class='container'>
       <h2>演示用户</h2>
-      <table class='table table-bordered'>
+      <table class='table table-bordered table-hover' style='text-align:center'>
         <thead>
           <tr>
-            <th>角色</th>
-            <th>用户</th>
+            <th style='text-align:center'>角色</th>
+            <th style='text-align:center'>用户（登陆名/密码）</th>
            </tr>
         </thead>
         <tbody>
           <tr>
-            <td>aa</td>
-            <td>bb</td>
-          </tr>
-          <tr class="active">
-            <td>aa</td>
-            <td>bb</td>
+            <td>项目经理</td>
+            <td>红中（hongzhong/actionview）</td>
           </tr>
           <tr>
-            <td>aa</td>
-            <td>bb</td>
+            <td>开发经理</td>
+            <td>一饼（yibing/actionview）</td>
+          </tr>
+          <tr>
+            <td>开发人员</td>
+            <td>二饼（erbing/actionview）<br/>三饼（sanbing/actionview）<br/>四饼（sibing/actionview）</td>
+          </tr>
+          <tr>
+            <td>测试经理</td>
+            <td>幺鸡（yaoji/actionview）</td>
+          </tr>
+          <tr>
+            <td>测试人员</td>
+            <td>二条（ertiao/actionview）<br/>三条（santiao/actionview）<br/>四条（sitiao/actionview）</td>
+          </tr>
+          <tr>
+            <td>系统管理员</td>
+            <td>******</td>
           </tr>
         </tbody>
       </table>
+      <div style='color: #F5E273'>
+        ⚠  如果您登录后拥有项目管理配置权限，建议不要对项目配置做任何改变，以免影响他人试用，谢谢！
+      </div>
+      <div class='common-action'>
+        <a href='http://www.actionview.cn:8080' class='index-banner-action-btn'>进 入</a>
+      </div>
     </div>
   </div>
 </body>
