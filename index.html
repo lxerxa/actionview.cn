@@ -1,361 +1,312 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <link rel="shortcut icon" href="/images/favicon.png" />
-  <title>ActionView - 面向中小企业的、开源免费的、类JIRA的问题需求跟踪工具</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" href="images/favicon.png" />
+    <title>ActionView - 面向中小企业的、开源免费的、类JIRA的问题需求跟踪工具</title>
+    <link rel="stylesheet" href="/css/jquery.fullPage.css">
+    <script src="/script/jquery.min.js"></script>
+    <script src="/script/jquery.fullPage.min.js"></script>
+    <script>
+        $(function () {
+            $('#container').fullpage({
+                navigation: true,
+                loopBottom: true,
+                sectionsColor: ['#fff', '#f4f4f4', '#fff', '#f4f4f4', '#fff', '#f4f4f4'],
+                onLeave: function (index, direction) {
+                    if (direction === 1) {
+                        console.log('111')
+                        $('#fp-nav ul li a span').toggleClass('bgf')
+                    }
+                    if (index === 1) {
+                        console.log(222);
 
-  <style type="text/css"> 
-body {                  
-  margin: 0px;
-  padding: 0px;
-  font-family: Helvetica Neue,Helvetica,Arial,Hiragino Sans GB,Hiragino Sans GB W3,Microsoft YaHei,sans-serif;
-}
-#navbar-actionview {
-    padding-top: 0;
-    transition: background .5s;
-    height: 65px;
-    margin-bottom: 0;
-    box-sizing: border-box;
-}
+                        $('#fp-nav ul li a span').toggleClass('bgf')
+                    }
 
-.nav {
-    margin-bottom: 0;
-    padding-left: 0;
-    list-style: none;
-}
+                }
+            });
+            // setInterval(function () {
+            //     $.fn.fullpage.moveSlideRight();
+            // }, 3000);
+        });
+    </script>
+    <style type="text/css">
+        /* reset */
 
-.navbar-header {
-    float: left;
-    margin-top: 18px;
-    margin-left: 50px;
-}
+        * {
+            padding: 0;
+            margin: 0;
+        }
 
-.navbar-nav {
-    float: left;
-    margin: 0;
-}
+        a {
+            color: #000;
+            text-decoration: none;
+        }
 
-.navbar-right {
-    float: right!important;
-    margin-right: -15px;
-}
+        body {
+            letter-spacing: 1px;
+            font-family: 'Helvetica Neue,helvetica,lucida grande,lucida sans unicode,lucida,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif';
+        }
 
-#navbar-actionview .navbar-nav {
-    margin-top: 0;
-    margin-right: 0;
-}
+        .hidden {
+            display: none;
+        }
 
-.navbar-nav>li {
-    float: left;
-}
+        /* reset */
 
-.nav>li, .nav>li>a {
-    position: relative;
-    display: block;
-}
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            text-align: center;
+            font-weight: normal;
+        }
 
-ul {
-    display: block;
-    padding: 0px;
-}
+        p {
+            text-align: center;
+        }
 
-li {
-    display: list-item;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
+        #nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+        }
 
-#navbar-actionview .navbar-nav li a {
-    padding: 10px 15px;
-    line-height: 20px;
-    margin-right: 15px;
-    color: #434343;
-    font-size: 15px;
-    text-shadow: none;
-    padding-top: 23px;
-    padding-bottom: 23px;
-}
+        #nav .logo {
+            float: left;
+            margin-top: 18px;
+            margin-left: 40px;
+        }
 
-a {
-    text-decoration: none;
-}
+        #nav ul {
+            float: right;
+            margin-right: 40px;
+            height: 40px;
+            padding: 10px 0;
+            line-height: 40px;
+        }
 
-#navbar-actionview .navbar-nav li a:hover {
-    color: #018b61;
-}
+        #nav li {
+            display: inline-block;
+        }
 
-.tour-wrap {
-    min-height: 500px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
+        #nav li a {
+            display: inline-block;
+            padding: 0 15px;
+            width: auto;
+            transform: all .6;
+            border-radius: 4px;
+        }
 
-.common-banner {
-    background: url(./images/bg.png) top no-repeat;
-    background-size: cover;
-}
+        #nav li a:hover {
+            opacity: 1;
+            background-color: #0033cc;
+            color: #fff;
+        }
 
-.common-banner .common-title {
-    padding: 200px 5px 5px;
-    font-size: 40px;
-    color: #3b3b3b;
-}
+        .section1 {
+            background: url(./images/bg.jpg) top no-repeat;
+            background-size: cover;
+            position: relative;
 
-.common-banner .common-action {
-    margin-top: 10px;
-    text-align: center;
-}
+        }
 
-.index-banner-action-btn {
-    display: inline-block;
-    padding: 14px 70px;
-    background: #5cb85c;
-    color: #fff;
-    border-radius: 3px;
-    font-size: 16px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
+        .section1 .banner {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            text-align: center;
+            color: #fff;
+        }
 
-.common-banner .common-nav {
-    margin-top: 160px;
-}
+        .section1 .banner h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
 
-.index-banner-action-btn:hover {
-    background: #018b61;
-}
+        .section1 .banner h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
 
-#navbar-actionview .btn-try {
-    display: inline-block;
-    border: 1px solid #02a473;
-    background: #5cb85c;
-    color: #fff!important;
-    padding: 5px 24px!important;
-    border-radius: 3px;
-    font-size: 14px!important;
-    margin-top: 17px;
-    margin-left: 20px;
-    outline: none;
-}
+        .section1 .try-btn {
+            display: inline-block;
+            width: 180px;
+            height: 60px;
+            line-height: 60px;
+            margin-top: 30px;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            font-size: 20px;
+            color: #fff;
+        }
 
-#navbar-actionview .btn-try:hover {
-    background: #018b61;
-}
+        .try-btn:hover {
+            background-color: #fff;
+            border-color: #fff;
+            color: #004290;
+        }
 
-.common-banner .common-desc {
-    font-size: 16px;
-    color: #4b4b4b;
-    padding: 20px 10px;
-    line-height: 26px;
-}
+        /* ===== */
 
-.common-banner .common-desc, .common-banner .common-title {
-    text-align: center;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
+        .container {
+            max-width: 70%;
+            margin: 0 auto;
+        }
 
-.main {
-    text-align: center;
-    margin-top: 40px;
-}
+        .section2 .container {
+            max-width: 70%;
+            margin: 0 auto;
+        }
 
-.container {
-  max-width: 1050px;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
+        .section2 .container img {
+            height: auto;
+            width: auto;
+            max-height: 100%;
+            max-width: 100%;
+        }
 
-.row {
-  text-align: center;
-  font-size: 30px;
-  margin: 10px 0 20px;
-}
+        .section5 {
+            text-align: center;
+        }
 
-.section-view {
-    float: left;
-    padding: 70px 0;
-    margin: 0 auto;
-    max-width: 1050px;
-    line-height: 2;
-    border-bottom: 1px dashed #ededed;
-}
+        .section5 img {
+            width: 50px;
+        }
 
-.section-view .title {
-    margin-top: 30px;
-    padding-bottom: 5px;
-    font-size: 30px;
-}
+        .section5 .container h3 {
+            margin-bottom: 50px;
+        }
 
-.section-view .desc {
-    margin-right: -10px;
-    text-align: left;
-}
+        .section5 .container ul {
+            display: inline-block;
+            text-align: left;
+            margin-bottom: 150px;
+        }
+        .section5 .container ul li {
+            margin-bottom: 10px;
+        }
 
-.col-md-4 {
-    width: 30%;
-}
+        /* ===== */
 
-.col-md-8 {
-    width: 60%;
-}
+        #fp-nav ul li a span {
+            background-color: #fff;
+        }
 
-.left {
-    float: left
-}
+        .bgf {
+            background: #333!important;
+        }
 
-.text-right {
-    text-align: right 
-}
+        .section img {
+            border: 1px solid #ccc;
+        }
 
-.col-md-4,.col-md-8{
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-}
+        .section .content h3 {
+            text-align: left;
+        }
 
-.show-img {
-    width: 625px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-}
+        .section h3 {
+            font-size: 28px;
+            line-height: 1.1em;
+            margin-bottom: 10px;
+        }
 
-h2 {
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  font-family: 'Microsoft YaHei';
-  font-weight: normal;
-}
+        .hr {
+            position: relative;
+            border-bottom: 1px solid #ccc;
+            margin: 30px 0;
+            width: 50%;
+        }
 
-</style>
+        .hr:before {
+            position: absolute;
+            left: 0;
+            top: -3px;
+            background: #fff;
+            border: 1px solid #ccc;
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 100%;
+        }
+    </style>
 </head>
+
 <body>
-  <nav id='navbar-actionview'>
-    <div class='navbar-header'>
-      <img src='/images/brand.png' width=160/>
+    <nav id='nav'>
+        <img class='logo' src='images/brand.png' width=160/>
+        <ul>
+            <li>
+                <a href="/">首页</a>
+            </li>
+            <li>
+                <a href="https://github.com/lxerxa/actionview#roadmap" target='_blank'>路线图</a>
+            </li>
+            <li>
+                <a href="https://github.com/lxerxa/actionview" target='_blank'>GitHub</a>
+            </li>
+            <li>
+                <a href="/contact.html">联系我们</a>
+            </li>
+            <li>
+                <a href="/ticket.html" target='_blank' class="btn try-btn">试 用</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="container">
+        <div class="section section1">
+            <div class='banner'>
+                <h1>更好用的问题跟踪工具</h1>
+                <h2>ActionView 是一个面向中小企业的、开源免费的、简单易用的、类Jira的问题需求跟踪工具</h2>
+                <a class="try-btn" href='/ticket.html' target='_blank'>试 用</a>
+            </div>
+        </div>
+        <div class="section section2">
+            <h4 style="margin-bottom: 30px">支持用户创建项目和定义属于项目自己的配置方案，实现全局配置方案和本地配置方案的完美结合。</h4>
+            <div class="container">
+                <img src="./images/scheme.png" alt="">
+            </div>
+        </div>
+        <div class="section section2">
+            <h4 style="margin-bottom: 30px">支持Scrum敏捷开发和看板方法，通过看板轻松实现任务、需求、Bug的管理跟踪。</h4>
+            <div class="container">
+                <img src="./images/kanban.png" alt="">
+            </div>
+        </div>
+        <div class="section section2">
+            <h4 style="margin-bottom: 30px">可自定义工作流，每一步可进行精细控制，确保正确的人在正确的时间执行正确的操作。</h4>
+            <div class="container">
+                <img src="./images/workflow.png" alt="">
+            </div>
+        </div> 
+        <div class="section section2">
+            <h4 style="margin-bottom: 30px">完备的权限控制模型，可自定义角色，不仅可给用户授权，同时支持给用户组授权。</h4>
+            <div class="container">
+                <img src="./images/role.png" alt="">
+            </div>
+        </div> 
+        <div class="section section2">
+            <h4 style="margin-bottom: 30px">简洁流畅的SPA页面体验。</h4>
+            <div class="container">
+                <img src="./images/issue-list.png" alt="">
+            </div>
+        </div>
+        <div class="section section5">
+            <h3>承诺：该系统后续无论增加什么功能，只要是我们发布的都会永久免费！</h3>
+        </div>
     </div>
-    <ul class="nav navbar-nav navbar-right">
-      <li>
-        <a href="/">首页</a>
-      </li>
-      <li>
-        <a href="/docs/" target='_blank'>文档</a>
-      </li>
-      <li>
-        <a href="https://github.com/lxerxa/actionview#roadmap" target='_blank'>路线图</a>
-      </li>
-      <li>
-        <a href="https://github.com/lxerxa/actionview" target='_blank'>GitHub</a>
-      </li>
-      <li>
-        <a href="/contact.html">联系我们</a>
-      </li>
-      <li>
-        <a href="/ticket.html" target='_blank' class="btn btn-try">试 用</a>
-      </li>
-    </ul>
-  </nav>
-  <div class='tour-wrap'>
-    <div class='common-banner'>
-      <div class='common-title'>
-        更好用的问题跟踪工具
-      </div>
-      <div class='common-desc'>
-        ActionView 是一个面向中小企业的、开源免费的、简单易用的、类Jira的问题需求跟踪工具 
-      </div>
-      <div class='common-action'>
-        <a href='/ticket.html' target='_blank' class='index-banner-action-btn'>试 用</a>
-      </div>
-      <div class='common-nav'>
-        &nbsp;
-      </div>
-    </div>
-    <div class='main'>
-      <div class='container'>
-        <div class='row'>
-          产品特性
-        </div>
-        <div class='section-view'>
-          <div class='col-md-4 left'>
-            <div class='title'>
-              用户创建项目
-            </div>
-            <div class='desc'>
-              支持用户创建项目，项目不仅可引用全局配置方案，也可自定义本地方案。各项目间自定义方案是隔离的。
-            </div>
-          </div>
-          <div class='col-md-8 left text-right'>
-            <img class='show-img' src='/images/project.png'/>
-          </div>
-        </div>
-        <div class='section-view'>
-          <div class='col-md-8 left text-right'>
-            <img class='show-img' src='/images/workflow.png'/>
-          </div>
-          <div class='col-md-4 left'>
-            <div class='title'>
-              定制专属工作流
-            </div>
-            <div class='desc'>
-              每个团队交付软件都有自己的过程。您可以引用全局默认工作流，也可以创建一个适用你团队的工作流。同时工作流的每一步可进行精细控制，确保正确的人在正确的时间执行正确的操作。
-            </div>
-          </div>
-        </div>
-        <div class='section-view'>
-          <div class='col-md-4 left'>
-            <div class='title'>
-              问题看板
-            </div>
-            <div class='desc'>
-              支持问题Kanban Board，暂不支持Scrum Board。
-            </div>
-          </div>
-          <div class='col-md-8 left text-right'>
-            <img class='show-img' src='/images/board.png'/>
-          </div>
-        </div>
-        <div class='section-view'>
-          <div class='col-md-8 left text-right'>
-            <img class='show-img' src='/images/others.png'/>
-          </div>
-          <div class='col-md-4 left'>
-            <div class='title'>
-              其他功能
-            </div>
-            <div class='desc'>
-              简单易用的问题界面配置，同时自定义界面也可应用至工作流当中；强大的问题筛选功能，可定义自己的过滤器；支持用户在问题上添加工作日志；支持用户针对问题发表评论；不仅可查看某个问题的改动记录，还可浏览整个项目的活动日志。
-            </div>
-          </div>
-        </div>
-        <div class='section-view'>
-          <div class='col-md-4 left'>
-            <div class='title'>
-              前沿技术栈
-            </div>
-            <div class='desc'>
-              采用较流行的前后端技术栈，React+Redux/PHP Laravel/MongoDB。
-            </div>
-          </div>
-          <div class='col-md-8 left text-right'>
-            <img class='show-img' src='/images/react-laravel.png'/>
-          </div>
-        </div>
-        <div class='section-view'>
-          <h2>承诺：该系统后续无论增加什么功能，只要是我们发布的都会永久免费。</h2>
-        </div>
-      </div>
-    </div>
-  </div>
 </body>
+
 </html>
